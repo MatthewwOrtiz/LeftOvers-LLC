@@ -1,0 +1,53 @@
+body {
+  background-color: #CCCCFF;
+
+}
+
+#container {
+	background-color: white;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header {
+	background-color: #00FFFF;
+	font-size: 28pt;
+	border-bottom: 1px solid gray;
+	padding-top: 1px;
+	
+}
+
+#content {
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	padding: 30px 300px 400px 50px;
+}
+
+
+#nav {
+	width: 200px;
+	float: left;
+}
+
+#scrum {
+	font-size: 16pt;
+}
+
+#about {
+	width: 800px;
+	float: right;
+	padding: 0px50px 20px 20px;
+	background-color: #EEE;
+
+}
+
+#staff {
+	font-size: 16pt;
+}
+
+#footer {
+	padding: 40px 10px 30px 950px;
+	
+}
