@@ -1,0 +1,138 @@
+CREATE TABLE "ILLUSTRATOR" (
+  "Illustrator_ID" int,
+  "FirstName" varchar(50),
+  "LastName" varchar(50),
+  PRIMARY KEY ("Illustrator_ID")
+);
+
+CREATE TABLE "COMMENT" (
+  "Comment_ID" int,
+  "User_ID" int,
+  "Feed_ID" int,
+  "Post_ID" int,
+  "ThumbsUp" int,
+  "ThumbsDown" int,
+  "Date/Time" varchar(50),
+  "Content" varchar(500),
+  PRIMARY KEY ("Comment_ID")
+);
+
+CREATE INDEX "FK" ON  "COMMENT" ("User_ID", "Feed_ID", "Post_ID");
+
+CREATE TABLE "CHARACTERS" (
+  "Character_ID" int,
+  "CharacterName" varchar(50),
+  PRIMARY KEY ("Character_ID")
+);
+
+CREATE TABLE "AUTHOR" (
+  "Author_ID" int,
+  "FirstName" varchar(50),
+  "LastName" varchar(50),
+  PRIMARY KEY ("Author_ID")
+);
+
+CREATE TABLE "AUTHOR_WORKS" (
+  "Comic_ID" int,
+  "Author_ID" int
+);
+
+CREATE INDEX "FK" ON  "AUTHOR_WORKS" ("Comic_ID", "Author_ID");
+
+CREATE TABLE "ILLUSTRATED_WORKS" (
+  "Comic_ID" int,
+  "Illustrator_ID" int
+);
+
+CREATE INDEX "FK" ON  "ILLUSTRATED_WORKS" ("Comic_ID", "Illustrator_ID");
+
+CREATE TABLE "COMIC" (
+  "Comic_ID" int,
+  "ComicName" varchar(50),
+  "Title" varchar(50),
+  "DatePublished" varchar(50),
+  "PublisherName" varchar(50),
+  "Volume" int,
+  "Issue" int,
+  "Edition" int,
+  "Series" int,
+  "FiveStarReview" float,
+  PRIMARY KEY ("Comic_ID")
+);
+
+CREATE TABLE "STANDARD_ACCOUNT" (
+  "User_ID" int,
+  "FirstName" varchar(50),
+  "LastName" varchar(50),
+  "Email" varchar(50),
+  "Password" varchar(50),
+  "UserName" varchar(50),
+  "Rank" varchar(50),
+  PRIMARY KEY ("User_ID")
+);
+
+CREATE TABLE "CHARACTER_SHEET" (
+  "Character_ID" int,
+  "Comic_ID" int
+);
+
+CREATE INDEX "FK" ON  "CHARACTER_SHEET" ("Character_ID", "Comic_ID");
+
+CREATE TABLE "COLORIST" (
+  "Colorist_ID" int,
+  "FirstName" varchar(50),
+  "LastName" varChar(50),
+  PRIMARY KEY ("Colorist_ID")
+);
+
+CREATE TABLE "PAGE_POST" (
+  "Post_ID" int,
+  "User_ID" int,
+  "Title" varchar(50),
+  "Date/Time" varchar(50),
+  "Content" varchar(500),
+  "ThumbsUp" int,
+  "ThumbsDown" int,
+  PRIMARY KEY ("Post_ID")
+);
+
+CREATE INDEX "FK" ON  "PAGE_POST" ("User_ID");
+
+CREATE TABLE "FOLLOWERS/FOLLOWEES" (
+  "Follower_ID" int,
+  "Followee_ID" int
+);
+
+CREATE INDEX "FK" ON  "FOLLOWERS/FOLLOWEES" ("Follower_ID", "Followee_ID");
+
+CREATE TABLE "NEWS_FEED" (
+  "Feed_ID" int,
+  "User_ID" int,
+  "Title" varchar(50),
+  "Date/Time" varchar(50),
+  "Content" varchar(500),
+  "ThumbsUp" int,
+  "ThumbsDown" int,
+  "Image" blob,
+  PRIMARY KEY ("Feed_ID")
+);
+
+CREATE INDEX "FK" ON  "NEWS_FEED" ("User_ID");
+
+CREATE TABLE "COLORIST_WORKS" (
+  "Comic_ID" int,
+  "Colorist_ID" int
+);
+
+CREATE INDEX "FK" ON  "COLORIST_WORKS" ("Comic_ID", "Colorist_ID");
+
+CREATE TABLE "PAGES" (
+  "Page_ID" int,
+  "Comic_ID" int,
+  "PageNumber" int,
+  "Image" varchar(50),
+  PRIMARY KEY ("Page_ID")
+);
+
+CREATE INDEX "FK" ON  "PAGES" ("Comic_ID");
+
