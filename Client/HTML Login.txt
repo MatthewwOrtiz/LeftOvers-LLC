@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <title>LeftoversLLC</title>
+  <link rel="stylesheet" type="text/css" href="homePageStyle.css" />
+  </head>
+
+<body>
+	<div id="container">
+	<div id="header">
+  <Center>  <image src="http://www.realmenreadcomics.com/wp-content/themes/bm2010/images/header.jpg" width="1000">
+	</div>
+			
+
+
+<div id="body">
+<div style="height:350px;width:100%;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+
+<center>
+Username: <input type="text" name=textbox1 size="40"><br>
+Password: <input type="password" name=textbox1 size="40"><br>
+
+
+<center> <button type="button">Fight Crime!</button>
+or
+<button type="button">Create Alter Ego!</button></center>
+</center>
+</div>
+</div>
+</div>
+
+<div id="footer">
+	Copyright &copy; Leftovers, LLC. All Rights Reserved
+	</div>
+    
+</body>
+
+</html>
