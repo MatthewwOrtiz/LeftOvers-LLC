@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css"> 
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body >
+  <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/comic/1">Comics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="https://s3-us-west-1.amazonaws.com/leftoversllc/index.html">Contact us</a>
+          </li>
+        </ul>
+        <form class="form-inline m-0">
+          <input class="form-control mr-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5 text-center" style="background-image: url('../../Desktop/asdsadsad.png'); background-size: cover;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-12 bg-dark border border-dark p-5">
+          <h1 class="display-3 mb-4 text-primary bg-dark">Comic Book Site</h1>
+          <p class="lead mb-5">Come one come all! Welcome to the comic book site youve been waiting for!</p>
+          <!--<a href="#" class="btn btn-lg mx-1 btn-secondary">A claim here</a>
+          <a href="#" class="btn btn-lg btn-primary mx-1">Your call to action</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- START of JavaScript -->
+
+
+<script type="text/javascript">  
+
+
+
+var title[];
+var content[];
+var thumbsUp[];
+var thumbsDown[];
+var image[]; 
+var arrayLength;
+
+var newsArray[];
+$.get("/data/newsfeed", function(result) {
+  newsArray = JSON.parse(JSON.stringify(result));
+});
+
+arrayLength = newsArray.length;
+
+
+var i;
+for(i = arrayLength ; i > (arrayLength - 10) ; i--){
+}
+
+
+$.get("/data/title1", function(result){
+  title[0] = JSON.stringify(result).Title;
+});
+
+$.get("/data/title2", function(result){
+  title[1] = JSON.stringify(result).Title;
+});
+
+
+$.get("/data/title3", function(result){
+  title[2] = JSON.stringify(result).Title;
+});
+
+
+$.get("/data/content1", function(result){
+  content[0] = JSON.stringify(result).Content;
+});
+
+
+$.get("/data/content2", function(result){
+  content[1] = JSON.stringify(result).Content;
+});
+
+
+$.get("/data/content3", function(result){
+  content[2] = JSON.stringify(result).Content;
+});
+
+
+$.get("/data/thumbup1", function(result){
+  thumbsUp[0] = JSON.stringify(result).ThumbsUp;
+});
+
+$.get("/data/thumbup2", function(result){
+  thumbsUp[1] = JSON.stringify(result).ThumbsUp;
+});
+
+$.get("/data/thumbup3", function(result){
+  thumbsUp[2] = JSON.stringify(result).ThumbsUp;
+});
+
+$.get("/data/thumbdown1", function(result){
+  thumbsDown[0] = JSON.stringify(result).ThumbsDown;
+});
+
+$.get("/data/thumbdown2", function(result){
+  thumbsDown[1] = JSON.stringify(result).ThumbsDown;
+});
+
+$.get("/data/thumbdown3", function(result){
+  thumbsDown[2] = JSON.stringify(result).ThumbsDown;
+});
+
+$.get("/data/image1", function(result){
+  image[0] = JSON.stringify(result).Image;
+});
+
+
+$.get("/data/image2", function(result){
+  image[1] = JSON.stringify(result).Image;
+});
+
+
+$.get("/data/image3", function(result){
+  image[2] = JSON.stringify(result).Image;
+});
+
+
+var titleElements = document.getElementsByClassName("text-primary");
+var contentElements = document.getElementsByClassName("Content");
+var likeElements = document.getElementsByClassName("likeCount");
+var imageElements = document.getElementsByClassName("img-fluid d-block w-100 img-thumbnail");
+
+
+var j;
+for( j = 0 ; j < 3 ; j++){
+  titleElements[j].innerHTML = title[j];
+  contentElements[j].innerHTML = content[j];
+  likeElements[j].innerHTML = thumbsup[j] + " Likes | " thumbsdown[j] " Dislikes ";
+
+  imageElements[j].src = image[j];
+}
+
+  
+
+
+  
+  </script>
+  
+
+<!-- End of JavaScript -->
+
+
+  <div class="py-5">
+    <div class="container">
+
+    <hr/>
+
+    <!-- Begin NewsFeed -->
+    
+  <div class="newsFeed">
+
+    
+    <!-- NewsPost -->
+      
+      <div class="row mb-5">
+        <div class="col-md-7">
+
+          <div class="titleAndContent">
+
+            <h2 class="text-primary">Article subtitle #1</h2>
+            <p class="Content">#PLACE CONTENT HERE</p>
+
+          </div>
+        
+        <!-- Like Dislike BEGIN -->
+          <p>
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-thumbs-up"></span> Like
+        </button>
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Dislike
+        </button>
+        
+        
+        
+          <div class="likeCount"> 
+             # Likes | # Dislikes 
+          </div>
+        
+        
+
+        </p>
+        </div> 
+      <!-- Like Dislike END -->
+        <div class="col-md-5 align-self-center">
+          
+
+          <div class="postImage">
+          <img class="img-fluid d-block w-100 img-thumbnail" src="https://i.redd.it/798myjzkwmjz.jpg" width="410" height="650"> </div>
+        </div>
+      </div>
+     
+      <hr/>
+
+  <!-- End of NewsPost -->
+
+
+
+
+     
+      
+    <!-- NewsPost -->
+      
+      <div class="row mb-5">
+        <div class="col-md-7">
+
+          <div class="titleAndContent">
+
+            <h2 class="text-primary">Article subtitle #1</h2>
+            <p class="">#PLACE CONTENT HERE</p>
+
+          </div>
+        
+        <!-- Like Dislike BEGIN -->
+          <p>
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-thumbs-up"></span> Like
+        </button>
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Dislike
+        </button>
+        
+        
+        
+          <div class="likeCount"> 
+            # Likes | # Dislikes
+            
+          </div>
+        
+        
+
+        </p>
+        </div> 
+      <!-- Like Dislike END -->
+        <div class="col-md-5 align-self-center">
+          
+
+          <div class="postImage">
+          <img class="img-fluid d-block w-100 img-thumbnail" src="https://i.redd.it/798myjzkwmjz.jpg" width="410" height="650"> </div>
+        </div>
+      </div>
+     
+      <hr/>
+
+  <!-- End of NewsPost -->
+
+
+ <!-- NewsPost -->
+      
+      <div class="row mb-5">
+        <div class="col-md-7">
+
+          <div class="titleAndContent">
+
+            <h2 class="text-primary">Article subtitle #1</h2>
+            <p class="Content">#PLACE CONTENT HERE</p>
+
+          </div>
+        
+        <!-- Like Dislike BEGIN -->
+          <p>
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-thumbs-up"></span> Like
+        </button>
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-thumbs-down"></span> Dislike
+        </button>
+        
+        
+        
+          <div class="likeCount"> 
+             # Likes | # Dislikes 
+          </div>
+        
+        
+
+        </p>
+        </div> 
+      <!-- Like Dislike END -->
+        <div class="col-md-5 align-self-center">
+          
+
+          <div class="postImage">
+          <img class="img-fluid d-block w-100 img-thumbnail" src="https://i.redd.it/798myjzkwmjz.jpg" width="410" height="650"> </div>
+        </div>
+      </div>
+     
+      <hr/>
+
+  <!-- End of NewsPost -->  
+    
+
+
+
+
+
+
+      </div>
+  <!-- End of NewsFeed -->
+
+
+
+
+
+      <div class="row">
+        <div class="col-md-5">
+        </div>
+  <div class="py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <p class="lead">Sign up to our newsletter for the latest news</p>
+          <form class="form-inline">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your e-mail here"> </div>
+            <button type="submit" class="btn btn-primary ml-3">Subscribe</button>
+          </form>
+        </div>
+        <div class="col-4 col-md-1 align-self-center">
+          <a href="https://www.facebook.com" target="_blank">
+            <i class="fa fa-fw fa-facebook fa-3x text-white"></i>
+          </a>
+        </div>
+        <div class="col-4 col-md-1 align-self-center">
+          <a href="https://twitter.com" target="_blank">
+            <i class="fa fa-fw fa-twitter fa-3x text-white"></i>
+          </a>
+        </div>
+        <div class="col-4 col-md-1 align-self-center">
+          <a href="https://www.instagram.com" target="_blank">
+            <i class="fa fa-fw fa-instagram text-white fa-3x"></i>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mt-3 text-center">
+          <p>© Copyright 2018 LeftOversLLC- All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
