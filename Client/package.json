@@ -1,11 +1,25 @@
 {
-  "name": "leftoversllc",
+  "name": "package",
   "version": "1.0.0",
-  "description": "LeftOvers client webserver",
+  "description": "NA",
   "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "http": "0.0.0",
+    "jquery": "^3.3.1",
+    "jsdom": "^11.10.0",
+    "pg": "^7.4.3",
+    "pg-promise": "^8.4.3",
+    "pgp": "^0.1.0",
+    "pgpromise": "^0.1.1",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ben Haussmann",
+  "author": "bndra",
   "license": "ISC"
 }
